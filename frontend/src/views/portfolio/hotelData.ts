@@ -7,112 +7,55 @@ import type { BrazilState } from '../../types/portfolio.types';
 export const hotelData: BrazilState[] = [
   {
     id: 'AM', name: 'Amazonas',
-    hotels: [
-      { name: 'Tropical Executive', city: 'Manaus' },
-      { name: 'Mural Living Hotel', city: 'Manaus' },
-    ],
+    regionalidade: ['Norte Amazonense', 'Sul Amazonense', 'Centro Amazonense', 'Sudoeste Amazonense'],
   },
   {
     id: 'PA', name: 'Para',
-    hotels: [
-      { name: 'Hotel Coracao Verde', city: 'Alter do Chao' },
-      { name: 'Amazon Park Hotel', city: 'Belem' },
-    ],
+    regionalidade: ['Baixo Amazonas', 'Nordeste Paraense', 'Sudeste Paraense', 'Sudoeste Paraense', 'Região Metropolitana de Belém'],
   },
   {
     id: 'PI', name: 'Piaui',
-    hotels: [
-      { name: 'Gran Hotel Arrey', city: 'Teresina' },
-      { name: 'Formula Arrey Hotel Teresina', city: 'Teresina' },
-      { name: 'Hotel Express Arrey', city: 'Teresina' },
-      { name: 'Executive Arrey Hotel', city: 'Teresina' },
-      { name: 'Formula Arrey Hotel Urucui', city: 'Urucui' },
-      { name: 'Arrey Hotel Beach', city: 'Parnaiba' },
-      { name: 'Arrey Rio Poty Hotel Praia', city: 'Luis Correia' },
-      { name: 'Arrey Hotel Boutique', city: 'Barra Grande' },
-      { name: 'Hotel Express Arrey', city: 'Piracuruca' },
-      { name: 'Hotel Express Arrey', city: 'Picos' },
-      { name: 'Formula Arrey Hotel Itaueira', city: 'Itaueira' },
-    ],
+    regionalidade: ['Norte Piauiense', 'Centro-Norte Piauiense', 'Sudoeste Piauiense', 'Sudeste Piauiense'],
   },
   {
     id: 'CE', name: 'Ceara',
-    hotels: [
-      { name: 'Terrasa Solar Hotel', city: 'Icarai de Amontada' },
-    ],
+    regionalidade: ['Noroeste Cearense', 'Norte Cearense', 'Sertões Cearenses', 'Jaguaribe', 'Centro-Sul Cearense', 'Sul Cearense'],
   },
   {
     id: 'PB', name: 'Paraiba',
-    hotels: [
-      { name: 'Hotel Manaira', city: 'Joao Pessoa' },
-    ],
+    regionalidade: ['Sertão Paraibano', 'Borborema', 'Agreste Paraibano', 'Mata Paraibana'],
   },
   {
     id: 'PE', name: 'Pernambuco',
-    hotels: [
-      { name: 'Pousada das Galinhas', city: 'Porto de Galinhas' },
-      { name: '232 Concept Rota 232', city: 'Caruaru' },
-      { name: 'Pousada La na Praia', city: 'Sao Jose da Coroa Grande' },
-      { name: 'Sao Jose da Coroa Grande', city: 'Sao Jose da Coroa Grande' },
-    ],
+    regionalidade: ['Sertão Pernambucano', 'Agreste Pernambucano', 'Mata Pernambucana', 'Região Metropolitana do Recife'],
   },
   {
     id: 'AL', name: 'Alagoas',
-    hotels: [
-      { name: 'Pousada La na Praia', city: 'Maragogi' },
-    ],
+    regionalidade: ['Sertão Alagoano', 'Agreste Alagoano', 'Leste Alagoano'],
   },
   {
     id: 'BA', name: 'Bahia',
-    hotels: [
-      { name: 'Pousada A Capela', city: 'Arembepe' },
-      { name: 'Patua do Morro', city: 'Cairu' },
-      { name: 'Bahia Inn', city: 'Cairu' },
-    ],
+    regionalidade: ['Oeste Baiano', 'Centro-Norte Baiano', 'Nordeste Baiano', 'Centro-Sul Baiano', 'Sul Baiano', 'Região Metropolitana de Salvador'],
   },
   {
     id: 'RJ', name: 'Rio de Janeiro',
-    hotels: [
-      { name: 'Pousada Mandala', city: 'Buzios' },
-    ],
+    regionalidade: ['Noroeste Fluminense', 'Norte Fluminense', 'Centro Fluminense', 'Sul Fluminense', 'Metropolitana do Rio de Janeiro'],
   },
   {
     id: 'SP', name: 'Sao Paulo',
-    hotels: [
-      { name: 'Paulista Flat', city: 'Sao Paulo' },
-      { name: 'Hotel Pigalle', city: 'Sao Paulo' },
-      { name: 'Hotel Paddock', city: 'Sao Paulo' },
-      { name: 'Hotel 28', city: 'Sao Paulo' },
-      { name: 'Thermas de Olimpia Resort', city: 'Olimpia' },
-      { name: 'Saint Paul Hotel', city: 'Sao Jose do Rio Preto' },
-      { name: 'Pousada Nefelibatas', city: 'Aguas de Lindoia' },
-      { name: 'Hotel Makai', city: 'Guaruja' },
-      { name: 'Chale Vale Florido', city: 'Embu-Guacu' },
-      { name: 'Pousada Maritimus', city: 'Barretos' },
-      { name: 'Sol Alphaville', city: 'Barueri' },
-    ],
+    regionalidade: ['Macro Metropolitana Paulista', 'Vale do Paraíba Paulista', 'Litoral Sul Paulista', 'Centro-Sul', 'Oeste', 'Leste', 'Sudeste', 'Noroeste Paulista', 'Metropolitana de São Paulo'],
   },
   {
     id: 'RS', name: 'Rio Grande do Sul',
-    hotels: [
-      { name: 'Castelo Saint Andrews', city: 'Gramado' },
-    ],
+    regionalidade: ['Noroeste Rio-Grandense', 'Nordeste Rio-Grandense', 'Centro Ocidental', 'Centro Oriental', 'Metropolitana de Porto Alegre', 'Sudoeste', 'Sudeste'],
   },
   {
     id: 'MG', name: 'Minas Gerais',
-    hotels: [
-      { name: 'Ibiti Village', city: 'Lima Duarte' },
-    ],
+    regionalidade: ['Noroeste de Minas', 'Norte de Minas', 'Triângulo Mineiro', 'Oeste de Minas', 'Sul e Sudoeste de Minas', 'Zona da Mata', 'Metropolitana de Belo Horizonte'],
   },
   {
     id: 'MT', name: 'Mato Grosso',
-    hotels: [
-      { name: 'Hotel Ucayali', city: 'Sinop' },
-      { name: 'Hotel Avenida Plaza', city: 'Querencia' },
-      { name: 'Araguaia Hotel', city: 'Barra do Garcas' },
-      { name: 'Hotel Pousada Sol do Araguaia', city: 'Barra do Garcas' },
-      { name: 'Pousada Aguas Quentes', city: 'Barra do Garcas' },
-    ],
+    regionalidade: ['Norte Mato-Grossense', 'Nordeste Mato-Grossense', 'Sudoeste Mato-Grossense', 'Centro-Sul', 'Sudeste Mato-Grossense'],
   },
 ];
 

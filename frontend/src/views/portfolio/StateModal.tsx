@@ -51,18 +51,12 @@ export function StateModal({ state, open, onClose, closeLabel }: StateModalProps
           {regionName}
         </Typography>
         <List dense>
-          {state.hotels.map((hotel, i) => (
+          {state.regionalidade.map((region, i) => (
             <ListItem key={i} sx={{ px: 0 }}>
               <PlaceOutlinedIcon sx={{ mr: 1, color: '#FFAA01', fontSize: 18 }} />
               <ListItemText
-                primary={hotel.name}
-                secondary={hotel.city}
+                primary={region}
                 sx={{ fontSize: '0.9rem', fontWeight: 500 }}
-                slotProps={{
-                  secondary: {
-                    style: { fontSize: '0.8rem', color: 'rgba(239,239,239,0.6)' }
-                  }
-                }}
               />
             </ListItem>
           ))}

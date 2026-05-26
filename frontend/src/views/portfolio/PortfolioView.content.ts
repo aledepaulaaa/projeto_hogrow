@@ -13,7 +13,7 @@ const portfolioContent = {
     yearsInMarket: t({ pt: '+6 anos no mercado', en: '+6 years in the market' }),
     partners: t({ pt: '+44 parceiros: hoteis, pousadas e resorts', en: '+44 partners: hotels, inns and resorts' }),
     rooms: t({ pt: '+3.000 quartos administrados pela HoGrow', en: '+3,000 rooms managed by HoGrow' }),
-    clickState: t({ pt: 'Clique em um estado para ver os hoteis', en: 'Click a state to see hotels' }),
+    clickState: t({ pt: 'Clique em um estado para ver as regiões parceiras', en: 'Click a state to see partner regions' }),
     regionalidade: t({ pt: 'Regionalidade', en: 'Regionality' }),
     close: t({ pt: 'Fechar', en: 'Close' }),
     ourPartners: t({ pt: 'Nossos parceiros', en: 'Our partners' }),

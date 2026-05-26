@@ -8,7 +8,7 @@ export interface Hotel {
 export interface BrazilState {
   id: string;
   name: string;
-  hotels: Hotel[];
+  regionalidade: string[];
 }
 
 /** Agencia parceira */
