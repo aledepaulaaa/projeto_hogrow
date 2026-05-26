@@ -4,7 +4,7 @@ import {
   FormControl, InputLabel, Alert, Grid,
 } from '@mui/material';
 import { useIntlayer } from 'react-intlayer';
-import { hotelData, getStateRegion } from '../portfolio/hotelData';
+import { PARTNER_LOGOS } from '../portfolio/logos';
 import api from '../../services/api';
 
 /**
@@ -25,9 +25,9 @@ export function ReservationForm() {
   const regions = ['Norte', 'Nordeste', 'Centro-Oeste', 'Sudeste', 'Sul'];
 
   // Lista de hoteis filtrados por regiao em ordem alfabetica
-  const filteredHotels = hotelData
-    .filter((s) => !region || getStateRegion(s.id) === region)
-    .flatMap((s) => s.hotels.map((h) => `${h.name} - ${h.city} (${s.id})`))
+  const filteredHotels = PARTNER_LOGOS
+    .filter((p) => !region || p.region === region)
+    .map((p) => `${p.name} (${p.state})`)
     .sort((a, b) => a.localeCompare(b));
 
   const handleSubmit = async (e: React.FormEvent) => {
