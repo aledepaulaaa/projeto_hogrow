@@ -1,0 +1,49 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Coverage
+coverage/
+
+# Intlayer generated files
+.intlayer/
+
+# Prisma
+prisma/*.db
+
+# Docker
+docker-compose.override.yml
+
+# Docs locais
+contexto_e_objetivo.md
+especificacoes.md
+intlayer-react.md
+intlayer.md
+react-grid.md
+anotacoes_dev.md
+
+# Repositório temporário
+temp-repo/
+temp-repo

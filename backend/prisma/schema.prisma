@@ -1,0 +1,107 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "linux-musl-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+/// Empresa do webapp HoGrow
+model Empresa {
+  id        String   @id @default(uuid())
+  name      String   @unique
+  users     User[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+/// Usuario do webapp HoGrow
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  password  String
+  name      String
+  phone     String?
+  avatar    String?
+  address   String?
+
+  /// Relacao N:1 com Empresa
+  empresaId  String?
+  empresa    Empresa?  @relation(fields: [empresaId], references: [id], onDelete: SetNull)
+
+  /// Pontuacao acumulada pelo usuario
+  points       Int      @default(0)
+  lastPlayedAt DateTime?
+
+  /// Campos de reset de senha
+  resetPasswordToken   String?
+  resetPasswordExpires DateTime?
+
+  /// Relacoes 1:N
+  reservations Reservation[]
+  spinHistory  SpinHistory[]
+  chatMessages ChatMessage[]
+  accessLogs   AccessLog[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+/// Reserva de hospedagem submetida pelo usuario
+model Reservation {
+  id                String   @id @default(uuid())
+  reservationNumber String
+  checkIn           DateTime
+  checkOut          DateTime
+  guestName         String
+  hotelName         String
+
+  /// Pontos concedidos por esta reserva
+  pointsAwarded     Int      @default(0)
+
+  /// Relacao N:1 com User
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+/// Historico de giros da roleta
+model SpinHistory {
+  id        String   @id @default(uuid())
+  prizeName String
+  points    Int      @default(0)
+
+  /// Relacao N:1 com User
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+}
+
+/// Mensagem do chat interno HoGrow
+model ChatMessage {
+  id        String   @id @default(uuid())
+  content   String
+  /// true = enviado pelo admin, false = enviado pelo usuario
+  isAdmin   Boolean  @default(false)
+
+  /// Relacao N:1 com User
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+}
+
+/// Registro de auditoria de acessos
+model AccessLog {
+  id        String   @id @default(uuid())
+  platform  String   // ex: "Mobile Android", "Mobile iOS", "Chrome PC", etc.
+  createdAt DateTime @default(now())
+
+  /// Relacao N:1 com User (opcional se deletado)
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+}

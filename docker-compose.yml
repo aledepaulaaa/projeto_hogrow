@@ -1,0 +1,71 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: hogrow-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: hogrow
+      POSTGRES_PASSWORD: hogrow_secret_2026
+      POSTGRES_DB: hogrow
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U hogrow"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: hogrow-rabbitmq
+    restart: unless-stopped
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: hogrow-pgadmin
+    restart: unless-stopped
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@hogrow.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "5050:80"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  backend:
+    profiles: ["prod"]
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: hogrow-backend
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql://hogrow:hogrow_secret_2026@postgres:5432/hogrow
+      JWT_SECRET: hogrow_jwt_super_secret_key_2026
+      JWT_EXPIRATION: 7d
+      PORT: 3535
+    ports:
+      - "3535:3535"
+
+  frontend:
+    profiles: ["prod"]
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: hogrow-frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "80:80"
+
+volumes:
+  pgdata:
