@@ -43,6 +43,10 @@ O frontend Vite+React do webapp HoGrow fornece a interface gamificada da campanh
 - Configuração das 14 opções reais de brindes e pontos na roleta, com quebra de linhas automática via `<tspan>` e redimensionamento 100% responsivo para mobile (290px a 440px).
 - Criação do componente SplashScreen com exibição sequencial animada (Canarinho Pistola e Logo HoGrow) sob uma chuva densa e contínua de confetes tricolores de 5 segundos.
 - Exibição real em Grid das logomarcas dos hotéis parceiros na aba correspondente do Portfólio, com efeitos flutuantes e borda de marca tricolor.
+- **Implementação de Regionalidade**: Substituição da listagem direta de hotéis pelo agrupamento por regiões (Norte, Sul, Sudeste, etc.) em todos os modais de mapa e listagens.
+- Catalogação completa de **33 logotipos de parceiros** segmentados por região.
+- **Resultados Visuais e Roleta Premium**: Refinamentos na legibilidade do componente RouletteWheel (contornos escuros de alto contraste e layout responsivo) e tabelas de ranking compactas dinâmicas vinculadas com a API.
+- Ajuste de bypass (`ngrok-skip-browser-warning: 'true'`) nas chamadas da API Axios (no frontend) para contornar bloqueios CORS da Vercel ao acessar o backend pelo Ngrok.
 
 ## Regras do Projeto
 - **Componentizacao:** Maximo 200 linhas por componente (regra /clean-code).

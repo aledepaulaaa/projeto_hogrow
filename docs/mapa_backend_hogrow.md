@@ -18,9 +18,9 @@ e:/projeto_hogrow/backend/
 │   │   └── strategies/        # JWT Strategy para Passport
 │   ├── users/                 # Modulo de Gestao de Usuarios
 │   │   ├── users.module.ts
-│   │   ├── users.controller.ts
-│   │   ├── users.service.ts   # Camada de negocio (findByEmail, create, update)
-│   │   ├── users.repository.ts # Camada de acesso ao banco (Prisma queries)
+│   │   ├── users.controller.ts # Endpoints: /me (GET/PATCH para perfil), /company-ranking, /reservations
+│   │   ├── users.service.ts   # Camada de negocio (findByEmail, update, getCompanyRanking)
+│   │   ├── users.repository.ts # Camada de acesso ao banco (Prisma queries, queries analíticas de classificação)
 │   │   └── dto/               # DTOs de usuario
 │   ├── mail/                  # Modulo de E-mail (Microservice RabbitMQ)
 │   │   ├── mail.module.ts

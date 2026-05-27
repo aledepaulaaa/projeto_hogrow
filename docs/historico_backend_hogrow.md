@@ -27,10 +27,12 @@ O backend NestJS do webapp HoGrow fornece a API REST para autenticacao, gestao d
 - Dockerfile multi-stage (Node Alpine).
 - docker-compose.yml com PostgreSQL, RabbitMQ, backend e frontend.
 
-### v1.4 - Fase 5: Refatoração Empresa (25/05/2026 - ATUAL)
+### v1.4 - Fase 5: Refatoração Empresa e Métricas Dinâmicas (25/05/2026 - ATUAL)
 - Renomeação de todas as entidades de Agency/agência para Empresa/empresa no Prisma e código NestJS.
 - Inclusão do fluxo `find-or-create` automático de Empresas por nome de texto livre durante o registro do usuário.
 - Atualização do seed script e DTOs para compatibilidade total.
+- **Endpoints de Métricas e Classificação**: Criação da rota `/users/company-ranking` (UsersController) para calcular a classificação dinâmica baseada em pontuação dos usuários agrupados pela mesma empresa.
+- Adição da rota PATCH `/users/me` para edição segura de dados do perfil do usuário (nome, telefone, avatar, endereço).
 
 ## Regras do Projeto
 - **SOLID:** Separacao rigorosa Service -> Repository -> PrismaService.

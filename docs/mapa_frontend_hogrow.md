@@ -37,10 +37,12 @@ e:/projeto_hogrow/frontend/
 │   │   ├── auth/                   # Login, Register (TextField livre de Empresa), ForgotPassword, ResetPassword
 │   │   ├── layouts/                # MainLayout, Header, Sidebar (V3: Removido Dashboard, Portfolio como primeiro item)
 │   │   ├── profile/                # ProfileView
-│   │   ├── roulette/               # RouletteView (V3: Balão de Giros), RouletteWheel (V3: Responsivo e Multiline), RouletteResult
-│   │   ├── portfolio/              # PortfolioView (V3: Mapa Oficial SVG, Bounding Box Labels, Grid Real de Parceiros)
-│   │   ├── world-cup/              # WorldCupView, ReservationForm
-│   │   └── results/                # ResultsView (V3: Cards de Estatísticas integrados)
+│   │   ├── roulette/               # RouletteView (V3: Balão de Giros), RouletteWheel (V3: Contorno de alta legibilidade, Responsivo e Multiline), RouletteResult
+│   │   ├── portfolio/              # PortfolioView (V3: Mapa Oficial SVG, Regionalidade, Grid de Parceiros)
+│   │   │   ├── logos.ts            # Catalogo das 33 marcas parceiras categorizadas por região/estado
+│   │   │   └── hotelData.ts        # Mapeamento do Brasil com estados e suas respectivas regiões (Norte, Sul, etc.)
+│   │   ├── world-cup/              # WorldCupView, ReservationForm (Integrado ao catálogo de logos.ts)
+│   │   └── results/                # ResultsView (V3: Cards Dinâmicos de Estatísticas e Leaderboard compacto)
 │   └── App.tsx                     # Montagem global com Providers e SplashScreen integrado
 ├── intlayer.config.ts              # Configuracao i18n (pt/en, no-prefix, static import)
 ├── nginx.conf                      # Proxy Reverso para producao
